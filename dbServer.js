@@ -31,8 +31,8 @@ export async function getFuncionario(email, senha) {
   return rows[0];
 }
 
-const funcionario = await getFuncionario("nara@cravoecanela.com", "12345");
-console.log(funcionario);
+// const funcionario = await getFuncionario("nara@cravoecanela.com", "12345");
+// console.log(funcionario);
 
 // const funcionarios = await getFuncionarios();
 // console.log(funcionarios);

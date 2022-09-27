@@ -14,6 +14,21 @@ app.get("/funcionarios", async (req, res) => {
   res.send(funcionarios);
 });
 
+app.post("/login", async (req, res) => {
+  const { email, senha } = req.body;
+  const funcionario = await getFuncionario(email, senha);
+  res.send(funcionario);
+  //   res.send(`${email} ${password}`);
+  //   const result = await getFuncionario(email, password);
+  //   if (result.length == 0) {
+  //     console.log("--------> Usuário nao existe");
+  //     res.sendStatus(404);
+  //   } else {
+  //     console.log("---------> Login feito com sucesso");
+  //     res.send(`${result[0].nome} is logged in!`);
+  //   }
+});
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send("Something broke!");
